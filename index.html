@@ -1,0 +1,42 @@
+<!doctype html5>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/save-svg-as-png/1.4.17/saveSvgAsPng.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<body>
+    <br>
+    <br>
+    <br>
+    <h1 class="display-4"> SVG TO PDF CONVERTER</h1>
+    <!-- <img width="300" height="200" src="https://raw.githubusercontent.com/saketongit/JavaScript-Assignments/a88439fd0fe1a65447f9292bf6c72b81351c45f9/mountains.svg" > -->
+
+<!-- <object data="file:///C:/Users/M%20Manudeepak%20R/Desktop/Bugjety/mountains.svg" width="300" height="300"> </object> -->
+<svg width="100" height="100">
+   <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+   Sorry, your browser does not support inline SVG.
+</svg> 
+   <!-- <svg version="1.1"
+         baseProfile="full"
+         width="300" height="200"
+         xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="red" />
+      <circle cx="150" cy="100" r="80" fill="green" />
+      <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text>
+    </svg> -->
+
+    <p><button id="button" class = "btn btn-outline-primary" >Download</button></p>
+
+    
+    <script src="back.js"></script>
+    <script>
+        document.querySelector("button").addEventListener("click", function () {
+            // var url = url.replace("watch?v=", "v/");
+            svg_to_pdf(document.querySelector("svg"), function (pdf) {
+                download_pdf('SVG.pdf', pdf.output('dataurlstring'));
+            });
+        });
+    </script>
+</body>
+</html>
